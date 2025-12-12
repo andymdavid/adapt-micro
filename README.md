@@ -1,6 +1,6 @@
-# adapt by design Microsite
+# OS Speedrun Microsite
 
-A targeted single-page microsite positioning otherstuff.ai workshops and custom work as complementary to adapt by design's Succession Thinking framework.
+A targeted single-page microsite positioning otherstuff.ai workshops and custom work.
 
 ## Tech Stack
 
@@ -98,20 +98,6 @@ vercel
 vercel --prod
 ```
 
-### Option 2: GitHub Integration
-1. Push code to GitHub repository
-2. Import project in Vercel dashboard
-3. Configure custom subdomain: `adaptbydesign.otherstuff.ai`
-4. Deploy
-
-### Custom Domain Setup
-In Vercel dashboard:
-1. Go to Project Settings > Domains
-2. Add domain: `adaptbydesign.otherstuff.ai`
-3. Configure DNS:
-   - Type: CNAME
-   - Name: adaptbydesign
-   - Value: cname.vercel-dns.com
 
 ## Build Output
 - Build successfully compiles

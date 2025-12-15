@@ -31,7 +31,7 @@ export default function WingmanSection({ headline, intro, leftColumn, rightColum
       <div className="max-w-6xl mx-auto">
         {/* Headline & Intro */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-dark mb-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-slate-dark mb-6">
             {headline}
           </h2>
           <p className="text-lg md:text-xl text-slate max-w-4xl mx-auto leading-relaxed">

@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
+import HeroAlternate from '@/components/HeroAlternate'
 import GapSection from '@/components/GapSection'
 import PhilosophySection from '@/components/PhilosophySection'
 import SpeedrunSection from '@/components/SpeedrunSection'
@@ -15,7 +16,7 @@ export default function Home() {
     <main>
       <Header {...content.header} />
 
-      <Hero {...content.hero} />
+      <HeroAlternate {...content.hero} />
 
       <GapSection {...content.gap} />
 
@@ -30,6 +31,8 @@ export default function Home() {
       <QuickWinsSection {...content.quickWins} />
 
       <DualCTASection {...content.dualCTA} />
+
+      <Hero {...content.hero} />
 
       <Footer {...content.footer} />
     </main>

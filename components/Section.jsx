@@ -20,7 +20,7 @@ export default function Section({
   return (
     <section
       id={id}
-      className={`${bgColors[bgColor]} ${paddings[paddingY]} ${className}`}
+      className={`min-h-screen ${bgColors[bgColor]} ${paddings[paddingY]} ${className}`}
     >
       <div className="container-custom">
         {children}

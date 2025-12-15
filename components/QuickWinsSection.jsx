@@ -5,7 +5,7 @@ export default function QuickWinsSection({ headline, examples }) {
     <Section id="quick-wins" bgColor="white">
       <div className="max-w-6xl mx-auto">
         {/* Headline */}
-        <h2 className="text-3xl md:text-5xl font-bold text-slate-dark mb-12 text-center">
+        <h2 className="text-2xl md:text-4xl font-bold text-slate-dark mb-12 text-center">
           {headline}
         </h2>
 

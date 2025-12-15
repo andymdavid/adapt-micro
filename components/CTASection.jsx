@@ -8,7 +8,7 @@ export default function CTASection({
   return (
     <div className="text-center">
       {headline && (
-        <h2 className="text-3xl md:text-5xl font-bold text-slate-dark mb-6">
+        <h2 className="text-2xl md:text-4xl font-bold text-slate-dark mb-6">
           {headline}
         </h2>
       )}

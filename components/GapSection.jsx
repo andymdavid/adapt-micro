@@ -21,7 +21,7 @@ export default function GapSection({ headline, body, pullQuote }) {
   return (
     <Section id="gap" bgColor="light">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold text-slate-dark mb-8 text-center">
+        <h2 className="text-2xl md:text-4xl font-bold text-slate-dark mb-8 text-center">
           {headline}
         </h2>
 

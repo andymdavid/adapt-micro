@@ -16,7 +16,7 @@ export default function SpeedrunSection({ badge, headline, intro, builds, whyItM
         )}
 
         {/* Headline */}
-        <h2 className="text-3xl md:text-5xl font-bold text-slate-dark mb-6 text-center">
+        <h2 className="text-2xl md:text-4xl font-bold text-slate-dark mb-6 text-center">
           {headline}
         </h2>
 

@@ -18,6 +18,8 @@ export default function Home() {
 
       <HeroAlternate {...content.hero} />
 
+      <section className="section-intro" />
+
       <GapSection {...content.gap} />
 
       <PhilosophySection {...content.philosophy} />

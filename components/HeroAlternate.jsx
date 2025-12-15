@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 
@@ -13,6 +13,18 @@ const inter = Inter({
 export default function HeroAlternate({ subheadline }) {
   const [stage, setStage] = useState('intro')
   const [hasScrolled, setHasScrolled] = useState(false)
+
+  useLayoutEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const { scrollRestoration } = window.history
+    window.history.scrollRestoration = 'manual'
+    window.scrollTo({ top: 0, behavior: 'auto' })
+
+    return () => {
+      window.history.scrollRestoration = scrollRestoration
+    }
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,20 +108,20 @@ export default function HeroAlternate({ subheadline }) {
                 />
               </div>
               <h1 className="font-bold text-2xl md:text-4xl text-white">
-                You’ve got capable developers and more demand than they can realistically take on.
+                You’ve got highly capable people and enough work for a team twice its size.
               </h1>
 
               <p
                 className={`${inter.className} mx-auto mt-4 text-white/80`}
-                style={{ maxWidth: '550px' }}
+                style={{ maxWidth: '620px', fontSize: '17px' }}
               >
-                Speedrun is a one-day, hands-on workshop where your team learns to use AI on the real work they already do.
+                What if your existing team could create the leverage to close that gap?
               </p>
             </div>
           </div>
         </div>
       </div>
-      {stage === 'ready' && !hasScrolled && (
+      {stage === 'ready' && (
         <div className="scroll-indicator scroll-indicator--pinned">
           <span>Scroll to Explore</span>
           <svg

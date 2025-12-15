@@ -11,7 +11,7 @@ const inter = Inter({
 })
 
 export default function HeroAlternate({ subheadline }) {
-  const [stage, setStage] = useState('logo')
+  const [stage, setStage] = useState('intro')
   const [hasScrolled, setHasScrolled] = useState(false)
 
   useEffect(() => {
@@ -24,6 +24,26 @@ export default function HeroAlternate({ subheadline }) {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [hasScrolled])
+
+  useEffect(() => {
+    const introTimer = setTimeout(() => {
+      setStage((prev) => (prev === 'intro' ? 'logo' : prev))
+    }, 1800)
+
+    return () => clearTimeout(introTimer)
+  }, [])
+
+  useEffect(() => {
+    if (stage !== 'ready') {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [stage])
 
   return (
     <section id="hero-alt" className="hero-section hero-section--video">
@@ -44,15 +64,20 @@ export default function HeroAlternate({ subheadline }) {
 
       <div className="hero-scroller">
         <div className="hero-panel hero-panel--logo">
-          <div className="container-custom hero-panel-inner">
-            <Image
-              src="/Speedrun.png"
-              alt="Speedrun logo"
-              width={284}
-              height={89}
-              priority
-              className="h-24 w-auto"
-            />
+          <div className="container-custom hero-panel-inner hero-panel-stack">
+            <div className={`hero-intro ${stage !== 'intro' ? 'hero-intro--hidden' : ''}`}>
+              <span>Introducing</span>
+            </div>
+            <div className={`hero-logo-block ${stage !== 'intro' ? 'hero-logo-block--visible' : ''}`}>
+              <Image
+                src="/Speedrun.png"
+                alt="Speedrun logo"
+                width={568}
+                height={178}
+                priority
+                className="h-40 w-auto"
+              />
+            </div>
           </div>
 
         </div>
@@ -60,6 +85,16 @@ export default function HeroAlternate({ subheadline }) {
         <div className="hero-panel hero-panel--copy">
           <div className="container-custom hero-panel-inner">
             <div className="hero-copy text-center">
+              <div className="hero-copy-icon mb-2 flex justify-center">
+                <Image
+                  src="/Logo-Main-Icon.png"
+                  alt="Other Stuff icon"
+                  width={48}
+                  height={48}
+                  priority
+                  className="h-12 w-12"
+                />
+              </div>
               <h1 className="font-bold text-2xl md:text-4xl text-white">
                 You’ve got capable developers and more demand than they can realistically take on.
               </h1>

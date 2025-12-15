@@ -1,3 +1,7 @@
+"use client"
+
+import { useEffect, useState } from 'react'
+
 const navItems = [
   { label: 'The Gap', href: '#gap' },
   { label: 'Philosophy', href: '#philosophy' },
@@ -11,8 +15,22 @@ const socialLinks = [
 ]
 
 export default function Header() {
+  const [navVisible, setNavVisible] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setNavVisible(true)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <nav className="nav">
+    <nav className={`nav ${navVisible ? 'nav--visible' : ''}`}>
       <div className="nav-container nav-container--tabs">
         <div className="nav-left">
           <a href="#hero" className="nav-logo-link" aria-label="Other Stuff home">
